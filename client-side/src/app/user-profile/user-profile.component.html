@@ -1,0 +1,149 @@
+<div class="panel-header panel-header-sm">
+</div>
+
+
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Adicionar Usuário</h5>
+        </div>
+        <div class="card-body">
+     
+          <form novalidate (ngSubmit)="adicionarUsuario()" [formGroup]="inscricaoForm">
+
+          <div class="alert alert-danger fade in" *ngIf="errors.length > 0">
+              <a href="/inscricao" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <h3 id="msgRetorno"><strong>Opa!</strong> Alguma coisa não deu certo:</h3>
+              <ul>
+                <li *ngFor="let error of errors">{{ error }}</li>
+              </ul>
+          </div>
+
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                  <div class="form-group" [ngClass]="{'has-error': displayMessage.nome }">
+                  <label>Nome Usuário</label>
+                  <input class="form-control" id="nome" type="text" placeholder="Nome (requerido)" formControlName="nome" />
+                    <span class="text-danger" *ngIf="displayMessage.nome">
+                      <p [innerHTML]="displayMessage.nome"></p>
+                    </span>  
+                
+                </div>
+              </div>
+
+
+              <div class="col-md-3 px-1">
+                  <div class="form-group" [ngClass]="{'has-error': displayMessage.cpf }">
+                  <label>CPF</label>
+                  <input class="form-control" id="cpf" type="text" placeholder="CPF (requerido)" formControlName="cpf" />
+                  <span class="text-danger" *ngIf="displayMessage.cpf">
+                    <p [innerHTML]="displayMessage.cpf"></p>
+                  </span>   
+                </div>
+              </div>
+
+            <div class="col-md-4 pl-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.email }">
+                  <label for="exampleInputEmail1">E-mail</label>
+                <input class="form-control" id="email" type="text" placeholder="E-mail (requerido)" formControlName="email" />
+                  <span class="text-danger" *ngIf="displayMessage.email">
+                    <p [innerHTML]="displayMessage.email"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                  <div class="form-group" [ngClass]="{'has-error': displayMessage.senha }">
+                  <label>Senha</label>
+                  <input class="form-control" id="senha" type="password" placeholder="Senha (requerido)" formControlName="senha" />
+                  <span class="text-danger" *ngIf="displayMessage.senha">
+                    <p [innerHTML]="displayMessage.senha"></p>
+                  </span>
+                </div>
+              </div>
+
+              <div class="col-md-6 pl-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.senhaConfirmacao }">
+                      <label>Confirmar Senha</label>
+                      <input class="form-control" id="senhaConfirmacao" type="password" placeholder="Confirme a Senha (requerido)" formControlName="senhaConfirmacao"/>
+                      <span class="text-danger" *ngIf="displayMessage.senhaConfirmacao">
+                        <p [innerHTML]="displayMessage.senhaConfirmacao"></p>
+                      </span>
+                  </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-2">
+                  <span>
+                     
+                    <button class="btn btn-success"  id="Login" type="submit">Login</button>
+                  </span>
+                </div>
+              </div>
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Address</label>
+                  <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>About Me</label>
+                  <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                </div>
+              </div>
+            </div>
+
+            
+
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-user">
+        <div class="image">
+          <img src="../assets/img/bg5.jpg" alt="...">
+        </div>
+        <div class="card-body">
+          <div class="author">
+            <a href="#">
+              <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
+              <h5 class="title">Mike Andrew</h5>
+            </a>
+            <p class="description">
+              michael24
+            </p>
+          </div>
+          <p class="description text-center">
+            "Lamborghini Mercy
+            <br> Your chick she so thirsty
+            <br> I'm in that two seat Lambo"
+          </p>
+        </div>
+        <hr>
+        <div class="button-container">
+          <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+          <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+            <i class="fab fa-twitter"></i>
+          </button>
+          <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+            <i class="fab fa-google-plus-g"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

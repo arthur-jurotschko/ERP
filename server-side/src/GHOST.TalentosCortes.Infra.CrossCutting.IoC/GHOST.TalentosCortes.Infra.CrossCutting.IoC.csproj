@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GHOST.TalentosCortes.Domain\GHOST.TalentosCortes.Domain.csproj" />
+    <ProjectReference Include="..\GHOST.TalentosCortes.Infra.CrossCutting.AspNetFilters\GHOST.TalentosCortes.Infra.CrossCutting.AspNetFilters.csproj" />
+    <ProjectReference Include="..\GHOST.TalentosCortes.Infra.CrossCutting.Identity\GHOST.TalentosCortes.Infra.CrossCutting.Identity.csproj" />
+    <ProjectReference Include="..\GHOST.TalentosCortes.Infrastructured.Data\GHOST.TalentosCortes.Infrastructured.Data.csproj" />
+  </ItemGroup>
+
+</Project>

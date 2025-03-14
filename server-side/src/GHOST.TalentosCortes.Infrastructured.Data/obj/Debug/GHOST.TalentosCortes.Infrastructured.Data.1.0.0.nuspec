@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>GHOST.TalentosCortes.Infrastructured.Data</id>
+    <version>1.0.0</version>
+    <authors>GHOST.TalentosCortes.Infrastructured.Data</authors>
+    <owners>GHOST.TalentosCortes.Infrastructured.Data</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="GHOST.TalentosCortes.Domain.Core" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="GHOST.TalentosCortes.Domain" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Dapper" version="1.50.5" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Design" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.FileExtensions" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.Json" version="2.1.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.Infrastructured.Data\bin\Debug\netstandard2.0\GHOST.TalentosCortes.Infrastructured.Data.dll" target="lib\netstandard2.0\GHOST.TalentosCortes.Infrastructured.Data.dll" />
+  </files>
+</package>

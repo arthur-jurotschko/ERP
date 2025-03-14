@@ -1,0 +1,99 @@
+<div class="panel-header panel-header-sm">
+
+  <div class="alert alert-danger fade in" *ngIf="errors.length > 0">
+    <a href="/inscricao" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <h3 id="msgRetorno"><strong>Opa!</strong> Alguma coisa não deu certo:</h3>
+    <ul>
+      <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+  </div>
+
+</div>
+
+
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Conecte-se em sua conta</h5>
+        </div>
+        <div class="card-body">
+
+          <form novalidate (ngSubmit)="realizarLogin()" [formGroup]="loginForm">
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.email }">
+                  <label>E-mail</label>
+                  <input style="width:100%;" class="form-control" id="email" type="text"
+                    placeholder="Endereço de e-mail (obrigatório)" formControlName="email" />
+                  <span class="text-danger" *ngIf="displayMessage.email">
+                    <p [innerHTML]="displayMessage.email"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.senha }">
+                  <label>Senha</label>
+                  <input style="width:100%;" class="form-control" id="senha" type="password"
+                    placeholder="Senha (obrigatório)" formControlName="senha" />
+                  <span class="text-danger" *ngIf="displayMessage.senha">
+                    <p [innerHTML]="displayMessage.senha"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <br />
+            <span>Ainda não tem conta? <a [routerLink]="['/signup']">&nbsp;Cadastre-se</a> </span>
+            <br />
+            <br />
+            <span><a [routerLink]="['/forgotpassword']">Esqueceu a senha?</a></span>
+            <br />
+            <br />
+            <hr />
+
+            <div style="float:left;" class="btnsalvar form-group">
+              <div class="col-md-0 col-md-offset-1">
+                <span>
+                  <button class="btn btn-success" [disabled]='!loginForm.valid' id="Login" type="submit">Entrar</button>
+                </span>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-md-4">
+      <div class="card card-user">
+        <div class="image">
+          <img src="../assets/img/bg5.jpg" alt="...">
+        </div>
+        <div class="card-body">
+          <div class="author">
+            <a href="#">
+              <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
+              <h5 class="title">Talentos</h5>
+            </a>
+            <p class="description">
+              Talentos Cortes
+            </p>
+          </div>
+          <p class="description text-center">
+            "Fundada
+            <br> em 2019
+            <br>temos orgurlho de ser quem somos"
+          </p>
+        </div>
+
+
+      </div>
+    </div> -->
+  </div>
+</div>

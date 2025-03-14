@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\Comercial\Promoções\Commands\" />
+    <Folder Include="Entities\Comercial\Promoções\Events\" />
+    <Folder Include="Entities\Comercial\Promoções\Repository\" />
+    <Folder Include="Entities\Comercial\Vendas\Commands\" />
+    <Folder Include="Entities\Comercial\Vendas\Events\" />
+    <Folder Include="Entities\Comercial\Vendas\Repository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GHOST.TalentosCortes.Domain.Core\GHOST.TalentosCortes.Domain.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,140 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content" style="margin-bottom:10px; margin-top: -70px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" style=" background-color: white;">
+        <div class="card-header">
+          <h5 class="card-title">&nbsp;Meus Clientes Cadastrados</h5>
+          <p class="card-subtitle text-muted" style="font-size:11px;">&nbsp; Você está conectado com a mais alta
+            tecnologia em sistemas integrados.
+            <a class="text-primary">Desejamos a você um ótimo trabalho !</a>
+          </p>
+        </div>
+        <br>
+
+
+
+        <div class="card-body all-icons">
+          <div class="row">
+
+            <div class="container-fluid">
+
+              <div class="btn-adicionar" style="display: block; float: right;">
+                <button style="border-radius:5px; background-color: #007acc;"
+                  [routerLink]="['/clientes/adicionar-cliente']" title="Adicionar" class="btn btn-warning btn-sm">
+                  <span class="glyphicon glyphicon-plus"></span>&nbsp; Novo
+                </button>
+              </div>
+
+              <div class="btn-adicionar" style="display: block; float: right;">
+                <button style="border-radius:5px; margin-right: 10px;" [routerLink]="['/clientes/dashboard-clientes']"
+                  title="Relatório Gráfico" class="btn btn-warning btn-sm">
+                  <span class="glyphicon glyphicon glyphicon-signal"></span>&nbsp; Relatório
+                </button>
+              </div>
+
+              <div class="input" style="display: block; float: left;">
+                <input style="width:630px; margin-top:11px;" type="text" class="search-filter form-control"
+                  [(ngModel)]="searchFilter" />
+              </div>
+
+            </div>
+
+            <div class="card-body">
+              <table class="table table-hover" style="margin-top:1%; width: 100%;">
+                <thead class="text-primary text-uppercase">
+                  <tr style="font-size:7px;">
+
+                    <th (click)="setOrder('cliente.nomeCompleto')" class="mdl-data-table__cell--non-numeric">
+                      <span [hidden]="reverse"></span>
+                      <span [hidden]="!reverse"></span>
+                      <strong>Nome Completo</strong>
+                      <span [hidden]="reverse"></span>
+                      <span [hidden]="!reverse"></span>
+                    </th>
+
+
+
+                    <th (click)="setOrder('cliente.email')" class="mdl-data-table__cell--non-numeric">
+                      <span [hidden]="reverse"></span>
+                      <span [hidden]="!reverse"></span>
+                      <strong>E-mail</strong>
+                      <span [hidden]="reverse"></span>
+                      <span [hidden]="!reverse"></span>
+                    </th>
+
+                    <th (click)="setOrder('cliente.telCelular')" class="mdl-data-table__cell--non-numeric">
+                      <span [hidden]="reverse"></span>
+                      <span [hidden]="!reverse"></span>
+                      <strong>Telefone Celular</strong>
+                      <span [hidden]="reverse"></span>
+                      <span [hidden]="!reverse"></span>
+                    </th>
+
+                    <th (click)="setOrder('cliente.data')" class="mdl-data-table__cell--non-numeric">
+                      <span [hidden]="reverse"></span>
+                      <span [hidden]="!reverse"></span>
+                      <strong>Data de Cadastro</strong>
+                      <span [hidden]="reverse"></span>
+                      <span [hidden]="!reverse"></span>
+                    </th>
+
+                    <th scope="col" class="text-center"><strong>Ações</strong></th>
+
+                  </tr>
+                </thead>
+                <tbody style="font-size:12px;">
+                  <tr
+                    *ngFor="let cliente of cliente | clientesFilter:searchFilter | paginate: { itemsPerPage: 8, currentPage: p } | orderBy: order:reverse:'case-insensitive'">
+
+                    <td> {{ cliente.nomeCompleto }} </td>
+
+                    <td> {{ cliente.email }} </td>
+                    <td> {{ cliente.telCelular }} </td>
+                    <td> {{ cliente.data | date:'dd/MM/yyyy' }} </td>
+
+                    <td class="text-center">
+                      <button style="border-radius:5px; margin-right:5px;"
+                        [routerLink]="['/clientes/detalhes-cliente', cliente.id]" title="Detalhes"
+                        class="btn btn-info btn-sm">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                      </button>
+                      <a style="border-radius:5px; margin-right:5px;"
+                        [routerLink]="['/clientes/editar-cliente', cliente.id]" title="Editar"
+                        class="btn btn-success btn-sm">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                      </a>
+                      <a style="border-radius:5px;" [routerLink]="['/clientes/excluir-cliente', cliente.id]"
+                        title="Excluir" class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <hr />
+
+              <div class="form-group">
+                <hr />
+                <span style="margin-left:3px;"><a class="text-primary card-subtitle text-muted"
+                    style="font-size:13px;">Total de itens cadastrados:
+                    (<span>{{ cliente && cliente.length }}</span>)</a> </span>
+
+                <br />
+              </div>
+
+
+              <ngb-pagination style="margin-top:40px;" [collectionSize]="cliente && cliente.length" [maxSize]="7"
+                [rotate]="true" [(page)]="page" [boundaryLinks]="true" (pageChange)="p =$event">
+              </ngb-pagination>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>GHOST.TalentosCortes.Domain.Core</id>
+    <version>1.0.0</version>
+    <authors>GHOST.TalentosCortes.Domain.Core</authors>
+    <owners>GHOST.TalentosCortes.Domain.Core</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="FluentValidation" version="7.6.104" exclude="Build,Analyzers" />
+        <dependency id="MediatR" version="4.1.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Arthu\Desktop\TalentosCortes\server-side\src\GHOST.TalentosCortes.Domain.Core\bin\Debug\netstandard2.0\GHOST.TalentosCortes.Domain.Core.dll" target="lib\netstandard2.0\GHOST.TalentosCortes.Domain.Core.dll" />
+  </files>
+</package>

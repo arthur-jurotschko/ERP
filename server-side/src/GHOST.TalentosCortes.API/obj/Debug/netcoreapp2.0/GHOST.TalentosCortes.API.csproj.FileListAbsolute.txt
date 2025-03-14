@@ -1,0 +1,17 @@
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\bin\Debug\netcoreapp2.0\GHOST.TalentosCortes.API.deps.json
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\bin\Debug\netcoreapp2.0\GHOST.TalentosCortes.API.runtimeconfig.json
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\bin\Debug\netcoreapp2.0\GHOST.TalentosCortes.API.runtimeconfig.dev.json
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\bin\Debug\netcoreapp2.0\GHOST.TalentosCortes.API.dll
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\bin\Debug\netcoreapp2.0\GHOST.TalentosCortes.API.pdb
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\bin\Debug\netcoreapp2.0\GHOST.TalentosCortes.Domain.Core.dll
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\bin\Debug\netcoreapp2.0\GHOST.TalentosCortes.Domain.dll
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\bin\Debug\netcoreapp2.0\GHOST.TalentosCortes.Domain.Core.pdb
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\bin\Debug\netcoreapp2.0\GHOST.TalentosCortes.Domain.pdb
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\obj\Debug\netcoreapp2.0\GHOST.TalentosCortes.API.csprojAssemblyReference.cache
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\obj\Debug\netcoreapp2.0\GHOST.TalentosCortes.API.csproj.CoreCompileInputs.cache
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\obj\Debug\netcoreapp2.0\GHOST.TalentosCortes.API.AssemblyInfoInputs.cache
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\obj\Debug\netcoreapp2.0\GHOST.TalentosCortes.API.AssemblyInfo.cs
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\obj\Debug\netcoreapp2.0\GHOST.TalentosCortes.API.csproj.CopyComplete
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\obj\Debug\netcoreapp2.0\GHOST.TalentosCortes.API.dll
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\obj\Debug\netcoreapp2.0\GHOST.TalentosCortes.API.pdb
+C:\Users\Arthu\Desktop\TalentosCortes\src\GHOST.TalentosCortes.API\bin\Debug\netcoreapp2.0\appsettings.json

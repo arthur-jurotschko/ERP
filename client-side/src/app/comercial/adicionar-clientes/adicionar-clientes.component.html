@@ -1,0 +1,306 @@
+<div class="panel-header panel-header-sm">
+
+  <div class="alert alert-danger fade in" style="float:left;" *ngIf="errors.length > 0">
+    <a href="/cliente/novo-cliente" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <h3 id="msgRetorno"><strong>Opa!</strong> Alguma coisa não deu certo:</h3>
+    <ul>
+      <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+  </div>
+  <hr />
+</div>
+
+<div class="main-content" style="margin-bottom:10px; margin-top: -70px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" style=" background-color: white;">
+        <div class="card-header">
+          <h5 class="card-title">&nbsp;Novo Cliente</h5>
+          <p class="card-subtitle text-muted" style="font-size:11px;">&nbsp; Você está conectado com a mais alta
+            tecnologia em sistemas integrados.
+            <a class="text-primary">Desejamos a você um ótimo trabalho!</a>
+          </p>
+        </div>
+        <br>
+
+
+        <div class="card-body all-icons">
+
+          <form novalidate (ngSubmit)="adicionarCliente()" [formGroup]="clienteForm">
+
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.nomecompleto }">
+                  <input style="width:100%;" class="form-control" id="nomecompleto" type="text"
+                    placeholder="✐  Nome Completo" formControlName="nomecompleto" />
+                  <span class="text-danger" *ngIf="displayMessage.nomecompleto">
+                    <p [innerHTML]="displayMessage.nomecompleto"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.cpf }">
+                  <input style="width:100%;" class="form-control" id="cpf" type="text" placeholder="✐  CPF (requerido)"
+                    formControlName="cpf" />
+                  <span class="text-danger" *ngIf="displayMessage.cpf">
+                    <p [innerHTML]="displayMessage.cpf"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.rg }">
+                  <input style="width:100%;" class="form-control" id="rg" type="text" placeholder="✐  RG (requerido)"
+                    formControlName="rg" />
+                  <span class="text-danger" *ngIf="displayMessage.rg">
+                    <p [innerHTML]="displayMessage.rg"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.telresidencial }">
+                  <input style="width:100%;" class="form-control" id="telresidencial" type="text"
+                    placeholder="✐  Telefone Residencial (requerido)" formControlName="telresidencial" />
+                  <span class="text-danger" *ngIf="displayMessage.telresidencial">
+                    <p [innerHTML]="displayMessage.telresidencial"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.telcelular }">
+                  <input style="width:100%;" class="form-control" id="telcelular" type="text"
+                    placeholder="✐  Telefone Celular (requerido)" formControlName="telcelular" />
+                  <span class="text-danger" *ngIf="displayMessage.telcelular">
+                    <p [innerHTML]="displayMessage.telcelular"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.email }">
+                  <input style="width:100%;" class="form-control" id="email" type="text"
+                    placeholder="✐  E-mail (requerido)" formControlName="email" />
+                  <span class="text-danger" *ngIf="displayMessage.email">
+                    <p [innerHTML]="displayMessage.email"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.redesocial }">
+                  <input style="width:100%;" class="form-control" id="redesocial" type="text"
+                    placeholder="✐  Rede Social (requerido)" formControlName="redesocial" />
+                  <span class="text-danger" *ngIf="displayMessage.redesocial">
+                    <p [innerHTML]="displayMessage.redesocial"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.generoId }">
+                  <select style="width:100%; height: 35px;" class="form-control" formControlName="generoId"
+                    id="generoId">
+                    <option *ngFor="let genero of generos" value="{{genero.id}}">{{ genero.nome }}
+                    </option>
+                  </select>
+                  <span class="text-danger" *ngIf="displayMessage.generoId">
+                    <p [innerHTML]="displayMessage.generoId"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" style="margin-left:4px;" [ngClass]="{'has-error': displayMessage.data }">
+                  <my-date-picker name="data" [options]="myDatePickerOptions" formControlName="data">
+                  </my-date-picker>
+                  <span class="text-danger" *ngIf="displayMessage.data">
+                    <p [innerHTML]="displayMessage.data"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10 pl-5">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.checkendereco }">
+                  <div class="col-md-10">
+                    <div class="checkbox">
+                      <input type="checkbox" name="checkendereco" [(ngModel)]="checkendereco" id="checkendereco"
+                        formControlName="checkendereco">
+                      <label for="checkendereco">Deseja informar o endereço ?</label>
+                      <span class="text-danger" *ngIf="displayMessage.checkendereco">
+                        <p [innerHTML]="displayMessage.checkendereco"></p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="EnderecoPartial" *ngIf="checkendereco">
+              <h4>Endereço</h4>
+
+              <div class="row">
+                <div class="col-md-10 pr-1">
+                  <div class="form-group" [ngClass]="{'has-error': displayMessage.logradouro }">
+                    <input style="width:100%;" class="form-control" id="logradouro" type="text"
+                      placeholder="✐  Logradouro (requerido)" formControlName="logradouro" />
+                    <span class="text-danger" *ngIf="displayMessage.logradouro">
+                      <p [innerHTML]="displayMessage.logradouro"></p>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-10 pr-1">
+                  <div class="form-group" [ngClass]="{'has-error': displayMessage.numero }">
+                    <input style="width:100%;" class="form-control" id="numero" type="text"
+                      placeholder="✐  Nº (requerido)" formControlName="numero" />
+                    <span class="text-danger" *ngIf="displayMessage.numero">
+                      <p [innerHTML]="displayMessage.numero"></p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-10 pr-1">
+                  <div class="form-group" [ngClass]="{'has-error': displayMessage.complemento }">
+                    <input style="width:100%;" class="form-control" id="complemento" type="text"
+                      placeholder="✐  Complemento (requerido)" formControlName="complemento" />
+                    <span class="text-danger" *ngIf="displayMessage.complemento">
+                      <p [innerHTML]="displayMessage.complemento"></p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-10 pr-1">
+                  <div class="form-group" [ngClass]="{'has-error': displayMessage.bairro }">
+                    <input style="width:100%;" class="form-control" id="bairro" type="text"
+                      placeholder="✐  Bairro (requerido)" formControlName="bairro" />
+                    <span class="text-danger" *ngIf="displayMessage.bairro">
+                      <p [innerHTML]="displayMessage.bairro"></p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-10 pr-1">
+                  <div class="form-group" [ngClass]="{'has-error': displayMessage.cep }">
+                    <input style="width:100%;" class="form-control" id="cep" type="text"
+                      placeholder="✐  CEP (requerido)" formControlName="cep" />
+                    <span class="text-danger" *ngIf="displayMessage.cep">
+                      <p [innerHTML]="displayMessage.cep"></p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-10 pr-1">
+                  <div class="form-group" [ngClass]="{'has-error': displayMessage.cidade }">
+                    <input style="width:100%;" class="form-control" id="cidade" type="text"
+                      placeholder="✐  Cidade (requerido)" formControlName="cidade" />
+                    <span class="text-danger" *ngIf="displayMessage.cidade">
+                      <p [innerHTML]="displayMessage.cidade"></p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-10 pr-1">
+                  <div class="form-group" [ngClass]="{'has-error': displayMessage.estado }">
+                    <select style="width:100%; height: 35px;" class="form-control" placeholder="✐  UF (requerido)"
+                      formControlName="estado" id="estado">
+                      <!-- <option *ngFor="let tipoContato of tipoContatos" value="{{tipoContato.id}}">{{ tipoContato.nome }} </option> -->
+                      <option value="">✐ UF</option>
+                      <option value="AC">Acre</option>
+                      <option value="AL">Alagoas</option>
+                      <option value="AP">Amapá</option>
+                      <option value="AM">Amazonas</option>
+                      <option value="BA">Bahia</option>
+                      <option value="CE">Ceará</option>
+                      <option value="DF">Distrito Federal</option>
+                      <option value="ES">Espírito Santo</option>
+                      <option value="GO">Goiás</option>
+                      <option value="MA">Maranhão</option>
+                      <option value="MT">Mato Grosso</option>
+                      <option value="MS">Mato Grosso do Sul</option>
+                      <option value="MG">Minas Gerais</option>
+                      <option value="PA">Pará</option>
+                      <option value="PB">Paraíba</option>
+                      <option value="PR">Paraná</option>
+                      <option value="PE">Pernambuco</option>
+                      <option value="PI">Piauí</option>
+                      <option value="RJ">Rio de Janeiro</option>
+                      <option value="RN">Rio Grande do Norte</option>
+                      <option value="RS">Rio Grande do Sul</option>
+                      <option value="RO">Rondônia</option>
+                      <option value="RR">Roraima</option>
+                      <option value="SC">Santa Catarina</option>
+                      <option value="SP">São Paulo</option>
+                      <option value="SE">Sergipe</option>
+                      <option value="TO">Tocantins</option>
+                    </select>
+                    <span class="text-danger" *ngIf="displayMessage.estado">
+                      <p [innerHTML]="displayMessage.estado"></p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" style="width: 100%;">
+                  <hr />
+                  <span>
+                    <button class="btn btn-success" [disabled]='!clienteForm.valid' id="Registrar"
+                      type="submit">Registrar</button>
+                  </span>
+
+                  <span>
+                    <button class="btn btn-danger" id="Voltar" style="margin-left: 5px;"
+                      [routerLink]="['/clientes/meus-clientes']">Voltar</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+<div class="panel-header panel-header-sm">
+
+  <div class="alert alert-danger fade in" *ngIf="errors.length > 0">
+    <a href="/inscricao" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <h3 id="msgRetorno"><strong>Opa!</strong> Alguma coisa não deu certo:</h3>
+    <ul>
+      <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+  </div>
+
+</div>
+
+
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Criar sua Conta</h5>
+        </div>
+        <div class="card-body">
+
+          <form novalidate (ngSubmit)="novoUsuario()" [formGroup]="usuarioForm">
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.nome }">
+                  <label>Nome de usuário</label>
+                  <input style="width:100%;" class="form-control" id="nome" type="text"
+                    placeholder="Nome de usuário (obrigatório)" formControlName="nome" />
+                  <span class="text-danger" *ngIf="displayMessage.nome">
+                    <p [innerHTML]="displayMessage.nome"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.cpf }">
+                  <label>CPF</label>
+                  <input style="width:100%;" class="form-control" id="cpf" type="cpf" placeholder="CPF"
+                    formControlName="cpf" />
+                  <span class="text-danger" *ngIf="displayMessage.cpf">
+                    <p [innerHTML]="displayMessage.cpf"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.email }">
+                  <label>E-mail</label>
+                  <input style="width:100%;" class="form-control" id="email" type="email"
+                    placeholder="E-mail (obrigatório)" formControlName="email" />
+                  <span class="text-danger" *ngIf="displayMessage.email">
+                    <p [innerHTML]="displayMessage.email"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.senha }">
+                  <label>Senha</label>
+                  <input style="width:100%;" class="form-control" id="senha" type="password"
+                    placeholder="Senha (obrigatório)" formControlName="senha" />
+                  <span class="text-danger" *ngIf="displayMessage.senha">
+                    <p [innerHTML]="displayMessage.senha"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10 pr-1">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.senhaConfirmacao }">
+                  <label>Confirmar senha</label>
+                  <input style="width:100%;" class="form-control" id="senhaConfirmacao" type="password"
+                    placeholder="Confirmar (obrigatório)" formControlName="senhaConfirmacao" />
+                  <span class="text-danger" *ngIf="displayMessage.senhaConfirmacao">
+                    <p [innerHTML]="displayMessage.senhaConfirmacao"></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <br />
+            <hr />
+
+            <div style="float:left;" class="btnsalvar form-group">
+              <div class="col-md-0 col-md-offset-1">
+                <span>
+                  <button class="btn btn-success" [disabled]='!usuarioForm.valid' id="Cadastrar"
+                    type="submit">Cadastre-se</button>
+                </span>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
